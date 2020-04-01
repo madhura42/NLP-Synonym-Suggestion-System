@@ -1,4 +1,4 @@
-Synonym Suggestion System using Word Embeddings
+## Synonym Suggestion System using Word Embeddings
 
 **Abstract**
 Word Embeddings have been used in various Natural Language Processing tasks. Recent methods of learning vector space representations of words have succeeded in capturing semantic and syntactic regularities in vector space. In this project the main aim has been to use these word embeddings for generating synonyms that could be used to improve the quality of writing. This technique gives us the advantage of taking the context of a particular word into consideration. A regular dictionary framework may give synonyms which may not be used in the same context.
