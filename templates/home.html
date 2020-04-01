@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image" href="static/logo2.png">
+    <title>Language Assist</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="static/product.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/navbar-top-fixed.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Righteous" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar justify-content-left navbar-expand-md fixed-top bg-dark">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="navbar-brand" href="#">
+          <img src="static/logo1.png" width="30" height="40" class="d-inline-block align-top" alt="">
+       </a>
+        <a class="navbar-brand" href="#" style="color:white;">Language Assist</a>
+        <a class="py-2 d-none d-md-inline-block" style="color:white;" href="#">Home</a>
+      </div>
+    </nav>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light image-p">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="font-weight-bold font-effect-3d">Language Assist</h1>
+        <p class="lead font-weight-normal">Your personal writing assistant</p>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden" style="padding:10px;">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Want to write a professional letter?</h2>
+          <p class="lead">We help you make use of correct grammar and appropriate words for writing your formal letter.</p>
+        </div>
+        <div class="image2 box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <button type="button" style="margin-top:10px;" class="button-style btn btn-light" data-toggle="button" onclick="window.location.href='{{ url_for( 'letter') }}';" aria-pressed="false">Get started</button>
+      </div>
+
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="padding:10px;">
+        <div class="image1 box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <div class="my-3 p-3">
+          <h2 class="display-5">Have you forgotten your childhood essay writing skills?</h2>
+          <p class="lead">We assist you in writing great essays without grammatical errors and suggest synonyms at the click of a button.</p>
+        </div>
+        <button type="button" style="margin-top:10px;" class="button-style btn btn-light" data-toggle="button" onclick="window.location.href='{{ url_for( 'essay') }}';" aria-pressed="false">Get started</button>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3" >
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="padding:10px;">
+        <div class="image3 box-shadow bg-dark mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <div class="my-3 p-3">
+          <h2 class="display-5">Want to start your own blog?</h2>
+          <p class="lead">By using our service you can be sure that your content will not have any grammatical errors.</p>
+        </div>
+        <button type="button" style="margin-top:10px;" class="button-style btn btn-light" data-toggle="button" onclick="window.location.href='{{ url_for( 'blog') }}';" aria-pressed="false">Get started</button>
+      </div>
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden" style="padding:10px;">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Need help with writing anything else?</h2>
+          <p class="lead">We've got you covered there too. We provide a platform that would help you in general to improve your writing skills.</p>
+        </div>
+        <div class="image4 bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <button type="button" style="margin-top:10px;" class="button-style btn btn-light" data-toggle="button" onclick="window.location.href='{{ url_for( 'editor') }}';" aria-pressed="false">Get started</button>
+      </div>
+    </div>
+
+    <!--<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light image-h">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="font-weight-bold font-effect-3d">This is how we help you</h1>
+      </div>
+    </div>-->
+
+
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

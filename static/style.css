@@ -1,0 +1,68 @@
+textarea{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top:4%;
+	width: 90%;
+	height: 70vh;
+	float:left;
+	border: 2px solid #dadada;
+  border-radius: 7px;
+	padding: 15px;
+}
+
+.suggestor{
+	margin-top:5%;
+	height: 80vh;
+	overflow-y: scroll;
+}
+.text-container{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom:10px;
+}
+
+.suggestion{
+	float: left;
+	min-height: 3vh;
+	width: 90%;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-top: 10px;
+	padding: 7px 7px 7px 7px;
+	font-size: 1.5 em;
+	font-weight: 500;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	background-color: #e1cdb4;
+}
+.grammar{
+	float: left;
+	min-height: 3vh;
+	width: 90%;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-top: 10px;
+	padding: 7px 7px 7px 7px;
+	font-size: 1.5 em;
+	font-weight: 500;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	background-color: #e1cdb4;
+}
+
+.button-style {
+	width:20%;
+	margin:auto;
+	padding: 5px 10px;
+}
+.btn-light {
+    color: #f8f9fa;
+    background-color: #8b504c;
+    border-color: #f8f9fa;
+}
+input[type="file"]{
+	border: 2px solid #3F51B5;
+}
+
+icon-style{
+	padding: 3px 5px;
+
+}

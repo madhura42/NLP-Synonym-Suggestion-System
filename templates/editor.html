@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image" href="static/logo2.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+    <link rel="stylesheet" href="static/navbar-top-fixed.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>Language Assist</title>
+  </head>
+  <body>
+	<div class="row">
+		<nav class="navbar navbar-expand-md fixed-top bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="static/logo1.png" width="30" height="40" class="d-inline-block align-top" alt="">
+      </a>
+		  <a class="navbar-brand" href="#" style="color:#f8f9fa;">Practice Writing</a>
+      <a class="py-2 d-none d-md-inline-block" style="color:#f8f9fa;" onclick="window.location.href='{{ url_for('index') }}';">Home</a>
+		</nav>
+  </div>
+	<main role="container" class="row" style="margin-top:40px;">
+        <div class="col-sm-9 text-container">
+          <div class="row"><textarea class = "editor" id="editor" form="usrform" placeholder="Enter text here..." ondblclick="captureText()"></textarea></div>
+          <div class="row" id="wrapper">
+            <div class="col custom-file" style="margin-top:10px;margin-left:8%;max-width:20%"><input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" onchange="showFile()">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+            <button type="button" class="col button-style btn btn-light" style="margin-top:10px;max-width:15%" onclick= "langCheck()">Grammar Check</button>
+            <button id="copy-button" type="button" class="col button-style btn btn-light" style="margin-top:10px;max-width:15%">Copy</button>
+            <button class="col button-style btn btn-light" type="button" style="margin-top:10px;max-width:15%" onclick="setText" id="done">Done</button>
+            <button class="content-footer col button-style btn btn-light" type="button" style="margin-top:10px;max-width:15%;margin-right:8%;" id="btn-export" onclick="down();" value="save">Download</button>
+          </div>
+        </div>
+        <div id = "synonym-parent" style="margin-top:2%;" class="col-sm-3 suggestor" >
+          <h4>Suggestions</h4>
+          <div id="list">
+          </div>
+        </div>
+    </main><br><br>
+    <div class="container">
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="static/new.js"></script>
+    <script type="text/javascript">
+    var input  = document.getElementById("editor");
+    var button = document.getElementById("copy-button");
+
+    button.addEventListener("click", function (event) {
+        event.preventDefault();
+        input.select();
+        document.execCommand("copy");
+    });
+    function setText(){
+      var text = document.getElementById("editor").value;
+      document.getElementById("editor").value = text;
+    }
+    function exportHTML(){
+       var sourceHTML = document.getElementById("editor").value;
+       var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+       var fileDownload = document.createElement("a");
+       document.body.appendChild(fileDownload);
+       fileDownload.href = source;
+       fileDownload.download = 'document.docx';
+       fileDownload.click();
+       document.body.removeChild(fileDownload);
+    }
+    function down(){
+    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+    var postHtml = "</body></html>";
+    //var html = preHtml+document.getElementById("editor").innerHTML+postHtml;
+    var html = document.getElementById("editor").value;
+    var blob = new Blob(['\ufeff', html], {
+        type: 'application/msword'
+    });
+    
+    // Specify link url
+    var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+    
+    // Specify file name
+    filename = 'document.doc';
+    
+    // Create download link element
+    var downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob ){
+        navigator.msSaveOrOpenBlob(blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = url;
+        
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+    
+      document.body.removeChild(downloadLink);
+    }
+
+
+
+    </script>
+    <script src="static/editor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
